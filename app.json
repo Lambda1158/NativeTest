@@ -1,12 +1,13 @@
 {
   "expo": {
-    "name": "my-expo-app",
-    "slug": "my-expo-app",
+    "name": "Spotify-wrapped",
+    "slug": "Spotify-wrapped",
     "version": "1.0.0",
+    "scheme": "testspoty",
 
     "web": {
       "favicon": "./assets/favicon.png",
-	  "bundler": "metro"
+      "bundler": "metro"
     },
 
     "experiments": {
