@@ -2,8 +2,8 @@ import { Text, View } from 'react-native';
 
 export default function Charts() {
   return (
-    <View>
-      <Text>Estos son los charts</Text>
+    <View className='flex-1 items-center mt-10'>
+      <Text className='text-spotify-green text-2xl font-bold'>Estos son los charts</Text>
     </View>
   );
 }
