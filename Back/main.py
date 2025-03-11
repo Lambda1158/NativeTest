@@ -1,9 +1,11 @@
 from flask import Flask
+from dotenv import load_dotenv
+import os
 import requests
 app=Flask(__name__)
 
-CLIENT_ID="87e6f8eaf85f4a748af9402e75029d42"
-CLIENT_SECRET="d6a26aded67d49f5ac6174360cff4254"
+CLIENT_ID=os.getenv('CLIENT_ID')
+CLIENT_SECRET=os.getenv('CLIENT_SECRET')
 REDIRECT_URI="http://localhost:5000/callback"
 AUTH_URL="https://accounts.spotify.com/authorize"
 TOKEN_URL="https://accounts.spotify.com/authorize/api/token"
