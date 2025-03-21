@@ -6,7 +6,7 @@ from spotipy.oauth2 import SpotifyOAuth
 from spotipy.cache_handler import FlaskSessionCacheHandler  
 
 
-scope = "user-read-private user-read-email user-top-read"
+scope = "user-read-private user-read-email user-top-read user-read-recently-played"
 params = {
     "client_id": Config.CLIENT_ID,
     "response_type": "code",
