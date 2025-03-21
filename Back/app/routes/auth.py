@@ -25,3 +25,8 @@ def callback():
     sp_oauth.get_access_token(request.args["code"])
     
     return redirect(url_for("spotify.get_playlist"))
+
+@auth_bp.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for("auth.home"))
