@@ -18,7 +18,7 @@ module.exports = {
         'spotify-dark-gray': '#282828',
         'spotify-medium-gray': '#535353',
         'spotify-light-gray': '#B3B3B3',
-        'spotify-dark-green': '#1ED760',
+        'spotify-dark-green': '#07301e',
         'spotify-red': '#FF0000',
       },
     },
