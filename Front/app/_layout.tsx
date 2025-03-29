@@ -3,6 +3,7 @@ import { Poppins_400Regular,Poppins_700Bold, Poppins_600SemiBold } from '@expo-g
 import { Text, View } from 'react-native';
 import { Stack } from 'expo-router';
 
+
 export default function Layout() {
   const [fontsLoaded] = useFonts({
     'Montserrat-Regular': Montserrat_400Regular,

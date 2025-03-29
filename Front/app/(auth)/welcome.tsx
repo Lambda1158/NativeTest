@@ -11,7 +11,7 @@ export default function welcome() {
   const lastSlide = activeIndex === itemsWelcome.length - 1;
 
   return (
-    <SafeAreaView className="relative h-full flex-1 items-center justify-center bg-spotify-black">
+    <SafeAreaView className=" h-full flex-1 items-center justify-center bg-spotify-black">
       <TouchableOpacity
         className="absolute right-0 top-0 p-5"
         onPress={() => router.replace('/(auth)/sign-in')}>
@@ -45,7 +45,7 @@ export default function welcome() {
           lastSlide ? () => router.replace('/(auth)/sign-in') : () => swiperRef.current?.scrollBy(1)
         }
         title={lastSlide ? 'Get Started' : 'Next'}
-        className="mt-10 w-11/12 "
+        className=" "
       />
     </SafeAreaView>
   );
