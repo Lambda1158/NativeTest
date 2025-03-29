@@ -1,15 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: [
-    './App.{js,ts,tsx}', // Archivo principal
-    './app/**/*.{js,ts,tsx}', // Incluye todos los archivos en la carpeta app
-    './components/**/*.{js,ts,tsx}', // Incluye todos los archivos en la carpeta components
-  ],
+  content: ['./App.{js,ts,tsx}', './app/**/*.{js,ts,tsx}', './components/**/*.{js,ts,tsx}'],
 
   presets: [require('nativewind/preset')],
   theme: {
     extend: {
+      fontFamily: {
+        mont: ['Montserrat-Regular'],
+        montbold: ['Montserrat-Bold'],
+        sans: ['Poppins-Regular'],
+        poppinssemi: ['Poppins-Semi'],
+        poppinsbold: ['Poppins-Bold'],
+      },
       colors: {
         // Colores de Spotify
         'spotify-green': '#1DB954',

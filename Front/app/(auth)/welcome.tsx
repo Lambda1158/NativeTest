@@ -4,36 +4,49 @@ import { Link, router } from 'expo-router';
 import { useRef, useState } from 'react';
 import Swiper from 'react-native-swiper';
 import { itemsWelcome } from 'app/constant';
+import CustomButton from '@/components/CustomeButton';
 export default function welcome() {
   const swiperRef = useRef<Swiper>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const lastSlide = activeIndex === itemsWelcome.length - 1;
 
   return (
-    <SafeAreaView className="h-full flex-1 items-center justify-center bg-spotify-black">
+    <SafeAreaView className="relative h-full flex-1 items-center justify-center bg-spotify-black">
       <TouchableOpacity
-        className=" mr-0 p-5"
+        className="absolute right-0 top-0 p-5"
         onPress={() => router.replace('/(auth)/sign-in')}>
         <Text className="text-spotify-white">Skip</Text>
       </TouchableOpacity>
-      <View className="">
-        <Text className="text-2xl font-bold text-spotify-green">
-          Esta es una app de Spotify Wrapped
-        </Text>
+      <View className="mt-20">
+        <Text className="font-montbold text-4xl text-spotify-green">Bienvenido a Melody</Text>
       </View>
       <Swiper
         ref={swiperRef}
         loop={false}
-        dot={<View className="mx-1 h-[4px] w-[32px] bg-spotify-green" />}
-        activeDot={<View className="mx-1 h-[4px] w-[32px] bg-spotify-dark-green" />}
+        dot={<View className="mx-1 h-[6px] w-[36px] bg-spotify-green" />}
+        activeDot={<View className="mx-1 h-[6px] w-[34px] bg-spotify-dark-green" />}
         onIndexChanged={(index) => setActiveIndex(index)}>
         {itemsWelcome.map((item) => (
-          <View key={item.id} className='flex-1 justify-center items-center p-5'>
-            <Text className='text-spotify-white text-2xl font-bold'>{item.title}</Text>
-			<Image className='w-full h-[300px] bg-transparent' resizeMode='contain' source={item.image}></Image>
-			<Text className='text-spotify-white text-lg'>{item.description}</Text>
+          <View key={item.id} className="flex-1 items-center justify-center p-5">
+            <Image
+              className="h-[300px] w-full bg-transparent"
+              resizeMode="contain"
+              source={item.image}
+            />
+            <Text className="font-mont text-4xl text-spotify-white">{item.title}</Text>
+            <Text className="mt-6 text-center text-xl italic text-spotify-white">
+              {item.description}
+            </Text>
           </View>
         ))}
       </Swiper>
+      <CustomButton
+        onPress={
+          lastSlide ? () => router.replace('/(auth)/sign-in') : () => swiperRef.current?.scrollBy(1)
+        }
+        title={lastSlide ? 'Get Started' : 'Next'}
+        className="mt-10 w-11/12 "
+      />
     </SafeAreaView>
   );
 }

@@ -4,20 +4,22 @@ import welcomeImage3 from '@assets/welcomeImg3.png';
 export const itemsWelcome = [
   {
     id: 1,
-    title: 'Titulo de la primera card',
-    description: 'Descripcion de la primera card',
+    title: 'Explora tu música',
+    description:
+      'Descubre cuáles son tus canciones y artistas más escuchados con análisis detallados de tu historial musical.',
     image: welcomeImage,
   },
   {
     id: 2,
-    title: 'Titulo de la segunda card',
-    description: 'Descripcion de la segunda card',
-    image: welcomeImage2,
+    title: 'Noticias y Moda',
+    description: 'Explora que artistas, álbumes y musica esta siendo sensacion actualmente!',
+    image: welcomeImage3,
   },
   {
     id: 3,
-    title: 'Titulo de la tercera card',
-    description: 'Descripcion de la tercera card',
-    image: welcomeImage3,
+    title: 'Tu resumen musical',
+    description:
+      'Obtén reportes semanales y anuales al estilo Spotify Wrapped con estadísticas únicas sobre tu música.',
+    image: welcomeImage2,
   },
 ];
