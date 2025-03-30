@@ -39,15 +39,17 @@ export default function CustomButton({
   IconLeft,
   IconRight,
   className,
+  ...props
 }: ButtonProps) {
   return (
     <TouchableOpacity
-      className={`flex w-full flex-row items-center justify-center rounded-full shadow-md shadow-neutral-400/70 ${className} ${getBgVariantStyle(bgVariant)}`}
-      onPress={onPress}>
+      className={`flex w-full flex-row items-center justify-center rounded-full shadow-md p-3 ${className} ${getBgVariantStyle(bgVariant)}`}
+      onPress={onPress}
+	  {...props}>
       <View>
         {IconLeft && <IconLeft />}
         <Text
-          className={`${textVariant} font-poppinssemi p-2 text-xl ${getTextVariantStyle(textVariant)}  `}>
+          className={`${textVariant} font-poppinssemi text-xl ${getTextVariantStyle(textVariant)}  `}>
           {title}
         </Text>
         {IconRight && <IconRight />}

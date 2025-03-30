@@ -32,7 +32,7 @@ def get_user_top_artists():
       top_artists = sp.current_user_top_artists(limit=5)
       return jsonify(top_artists)
 
-@spotify_bp.route("/user-info")
+@spotify_bp.route("/get_user")
 @token_required
 def get_user():
       user_info = sp.current_user()

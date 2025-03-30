@@ -73,8 +73,14 @@ def login():
 
 @auth_bp.route("/callback")
 def callback():
-    sp_oauth.get_access_token(request.args["code"])
-    return redirect(url_for("auth.home"))
+    code = request.args.get('code')
+    token_info = sp_oauth.get_access_token(code)
+    
+    # Guarda el token en la sesión del servidor
+    session['spotify_token'] = token_info
+    
+    # Redirige al frontend con éxito
+    return redirect("melody://home?auth=success")
 
 @auth_bp.route("/logout")
 def logout():

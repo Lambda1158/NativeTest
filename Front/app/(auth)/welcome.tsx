@@ -1,6 +1,5 @@
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
-import { Link, router } from 'expo-router';
+import { router } from 'expo-router';
 import { useRef, useState } from 'react';
 import Swiper from 'react-native-swiper';
 import { itemsWelcome } from 'app/constant';
@@ -8,14 +7,14 @@ import CustomButton from '@/components/CustomeButton';
 export default function welcome() {
   const swiperRef = useRef<Swiper>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const lastSlide = activeIndex === itemsWelcome.length - 1;
+  const lastSlide = activeIndex === itemsWelcome?.length - 1;
 
   return (
-    <SafeAreaView className=" h-full flex-1 items-center justify-center bg-spotify-black">
+    <View className=" h-full flex-1 items-center justify-center bg-spotify-black">
       <TouchableOpacity
         className="absolute right-0 top-0 p-5"
         onPress={() => router.replace('/(auth)/sign-in')}>
-        <Text className="text-spotify-white">Skip</Text>
+        <Text className="text-spotify-white font-mont text-base">Skip</Text>
       </TouchableOpacity>
       <View className="mt-20">
         <Text className="font-montbold text-4xl text-spotify-green">Bienvenido a Melody</Text>
@@ -45,8 +44,8 @@ export default function welcome() {
           lastSlide ? () => router.replace('/(auth)/sign-in') : () => swiperRef.current?.scrollBy(1)
         }
         title={lastSlide ? 'Get Started' : 'Next'}
-        className=" "
+        className="mb-2"
       />
-    </SafeAreaView>
+    </View>
   );
 }

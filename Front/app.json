@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Spotify-wrapped",
-    "slug": "Spotify-wrapped",
+    "name": "melody",
+    "slug": "melody",
     "version": "1.0.0",
-    "scheme": "testspoty",
+    "scheme": "melody",
 
     "web": {
       "favicon": "./assets/favicon.png",
@@ -28,13 +28,30 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.melody",
+      "infoPlist": {
+        "LSApplicationQueriesSchemes": ["spotify", "melody"]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.melody",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "melody",
+              "host": "callback"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
     }
   }
 }

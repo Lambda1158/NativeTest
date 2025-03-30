@@ -23,3 +23,6 @@ export const itemsWelcome = [
     image: welcomeImage2,
   },
 ];
+
+
+export const PROXY = 'http://localhost:5000/';
